@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Program Using Conditional Statements and Loops</h2> <p>
+    Enter a Number:
+    <input type="number" id="num"></p>
+<button onclick="checkAll()">Check</button>
+<div id="output"></div>
+<script>
+function checkAll() {
+    var n = parseInt(document.getElementById("num").value);
+    var result = "";
+    // a) Vote Eligibility
+    if (n >= 18)
+        result += "Vote Eligibility: Eligible to vote<br>";
+    else
+        result += "Vote Eligibility: Not eligible to vote<br>";
+    // b) Even or Odd
+    if (n % 2 == 0)
+        result += "Even / Odd: Even number<br>";
+    else
+        result += "Even / Odd: Odd number<br>";
+    // c) Sum of first 10 natural numbers
+    var sum1 = 0;
+    for (var i = 1; i <= 10; i++)
+        sum1 += i;
+    result += "Sum of first 10 natural numbers: " + sum1 + "<br>";
+    // d) Sum of first 10 even numbers
+    var sum2 = 0;
+    for (var i = 2; i <= 20; i += 2)
+        sum2 += i;
+    result += "Sum of first 10 even numbers: " + sum2 + "<br>";
+    // e) Prime number check
+    var prime = true;
+    if (n <= 1) {
+        prime = false;
+    } else {
+        for (var i = 2; i < n; i++) {
+            if (n % i == 0) {
+                prime = false;
+                break; }
+            } }
+    if (prime)
+        result += "Prime Check: Prime number";
+    else
+        result += "Prime Check: Not a prime number";
+    document.getElementById("output").innerHTML = result; }
+</script>
+</body>
+</html>

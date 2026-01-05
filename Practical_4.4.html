@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create and Manipulate Elements</title>
+</head>
+<body>
+<h2>Create and Manipulate Elements</h2>
+Enter item:
+<input type="text" id="item">
+<button onclick="addItem()">Add</button>
+<ul id="list"></ul>
+<script>
+function addItem() {
+    var text = document.getElementById("item").value;
+    if (text !== "") {
+        var li = document.createElement("li");
+        li.innerHTML = text + " ";
+        var btn = document.createElement("button");
+        btn.innerHTML = "Remove";
+        btn.onclick = function() {
+            li.remove(); };
+        li.appendChild(btn);
+        document.getElementById("list").appendChild(li);
+        document.getElementById("item").value = "";
+    }
+}
+</script>
+</body>
+</html>

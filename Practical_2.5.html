@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div and Span Layout</title>
+  <style>
+    body {
+      font-family: Arial,;
+      padding: 1rem;
+    }
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .content {
+      margin-top: 1rem;
+    }
+    .box {
+      background-color: #f2f2f2;
+      padding: 1rem;
+    }
+    .highlight {
+      color: blue;
+    }
+    @media (min-width: 600px) {
+      .content {
+        display: flex;
+        gap: 1rem;
+      }
+      .box {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Div and Span Example</h1>
+  </div>
+  <div class="content">
+    <div class="box">
+      This is <span class="highlight">Box One</span> using div for layout.
+    </div>
+    <div class="box">
+      This is <span class="highlight">Box Two</span> with span for inline styling.
+    </div>
+  </div>
+</body>
+</html>

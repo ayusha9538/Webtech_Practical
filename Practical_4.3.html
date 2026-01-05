@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Div, Span & Event Listeners</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+    }
+    .header {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .box {
+      background: #f2f2f2;
+      padding: 1rem;
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+    .highlight {
+      color: blue;
+      font-weight: bold;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Event Listener Demo</h1>
+  </div>
+  <div class="box" id="box">
+    Click or hover on this <span class="highlight">box</span>
+  </div>
+  <button id="addBtn">Add Event Listener</button>
+  <button id="removeBtn">Remove Event Listener</button>
+  <p id="message"></p>
+  <script>
+    const box = document.getElementById("box");
+    const message = document.getElementById("message");
+    const addBtn = document.getElementById("addBtn");
+    const removeBtn = document.getElementById("removeBtn");
+    function mouseClick() {
+      message.textContent = "Mouse Click Event Triggered";
+    }
+    function keyPress(event) {
+      message.textContent = "Key Pressed: " + event.key;
+    }
+    addBtn.addEventListener("click", function () {
+      box.addEventListener("click", mouseClick);
+      document.addEventListener("keydown", keyPress);
+      message.textContent = "Event Listeners Added";
+    });
+    removeBtn.addEventListener("click", function () {
+      box.removeEventListener("click", mouseClick);
+      document.removeEventListener("keydown", keyPress);
+      message.textContent = "Event Listeners Removed";
+    });
+  </script>
+</body>
+</html>

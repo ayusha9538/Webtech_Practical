@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+</head>
+<body>
+<h2>Password Check</h2>
+<input type="password" id="pass" oninput="checkPassword()">
+<span id="msg"></span>
+<script>
+function checkPassword() {
+    var p = document.getElementById("pass").value;
+    var msg = document.getElementById("msg");
+
+    if (p.length < 6) {
+        msg.innerHTML = "Password too short";
+    } else {
+        msg.innerHTML = "Password OK"; }
+}
+</script>
+</body>
+</html>

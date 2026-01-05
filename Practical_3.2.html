@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>var let const Example</title>
+</head>
+<body>
+<h2>var, let and const Scope</h2>
+<p id="output"></p>
+<script>
+var text = "";{
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    text += "Inside block:<br>";
+    text += "a = " + a + "<br>";
+    text += "b = " + b + "<br>";
+    text += "c = " + c + "<br><br>";}
+text += "Outside block:<br>";
+text += "a = " + a + "<br>";
+text += "b and c are not accessible outside the block";
+document.getElementById("output").innerHTML = text;
+</script>
+</body>
+</html>
